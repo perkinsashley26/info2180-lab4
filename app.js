@@ -6,7 +6,7 @@ window.onload = function(){
     });
 
 
-const url = "http://localhost/info2180-lab4/superheroes.php";
+const url = "http://localhost/info2180-lab4/superheroes.php"/*+"?query="+putsearchhere*/;
 
 async function Fetch(){
     let response = await fetch(url);

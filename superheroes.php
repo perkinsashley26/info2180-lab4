@@ -63,10 +63,19 @@ $superheroes = [
   ], 
 ];
 
-?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+/*$anyvariablename=$_REQUEST['query'];
+
+
+if(the query is empty){
+    foreach ($superheroes as $superhero){
+        echo "<li>".$superhero['alias']."</li>";
+    }
+}
+else{
+    
+    
+
+}*/
+
+?>
