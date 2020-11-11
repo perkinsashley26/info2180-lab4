@@ -58,8 +58,8 @@ function displayData(data){
     addError(data, resultDiv);
     if(isJsonString(data) === true){
         let JSONData = JSON.parse(data);
-        const nameElement = document.createElement('h1');
-        const aliasElement = document.createElement('h3');
+        const nameElement = document.createElement('h3');
+        const aliasElement = document.createElement('h4');
         const bioElement = document.createElement('p');
         let name = document.createTextNode(JSONData.name);
         let alias = document.createTextNode(`A.K.A ${JSONData.alias}`);
