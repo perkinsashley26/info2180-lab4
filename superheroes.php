@@ -67,29 +67,32 @@ $superheroes = [
 <?php
 
 function findhero($superheroes,$search){
-    foreach($superheroes as $superhero){
-        if(stripos($superhero,$search)!= false){
-            if($search==$superhero["name"])|| ($search==$superhero["alias"]){
-                echo $superhero
-            }
+    $found = false;
+    foreach($superheroes as $hero):
+        if($search==$hero["name"]|| $search==$hero["alias"]){
+            echo json_encode($hero);
+            $found = true;
+        break;
         }
+    endforeach;
+    if($found == false){
+        echo "<h2>Superhero not found</h2>";
     }
-
+    
 }
+
+$search = trim(filter_input(INPUT_GET, 'query', FILTER_SANITIZE_STRING));
+
+if($search != ''){
+    findhero($superheroes, $search);
+}else{
+    $data = '';
+    $data .= "<ul>";
+    foreach ($superheroes as $hero){
+        $data .= "<li>{$hero['alias']}</li>";
+    }
+    $data .= "</ul>";
+    echo $data;
+}
+
 ?>
-
-/*$anyvariablename=$_REQUEST['query'];
-
-
-if(the query is empty){
-    foreach ($superheroes as $superhero){
-        echo "<li>".$superhero['alias']."</li>";
-    }
-}
-else{
-    
-    
-
-}*/
-
-
