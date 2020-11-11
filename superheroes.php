@@ -62,7 +62,21 @@ $superheroes = [
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
   ], 
 ];
+?>
 
+<?php
+
+function findhero($superheroes,$search){
+    foreach($superheroes as $superhero){
+        if(stripos($superhero,$search)!= false){
+            if($search==$superhero["name"])|| ($search==$superhero["alias"]){
+                echo $superhero
+            }
+        }
+    }
+
+}
+?>
 
 /*$anyvariablename=$_REQUEST['query'];
 
@@ -78,4 +92,4 @@ else{
 
 }*/
 
-?>
+
